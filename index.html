@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuri Isaac Laygo - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Parallax Effect for Header */
+        header {
+            background: linear-gradient(135deg, #1f1f1f, #2e8b7f);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        header .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            animation: float 6s ease-in-out infinite; /* Floating animation */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        header p {
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Keyframes for Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 2px;
+            background-color: #4CAF50;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+
+        /* Skills Section */
+        .skills li {
+            list-style: none;
+            background: #2f2f2f;
+            margin: 10px 0;
+            border-radius: 25px;
+            padding: 10px;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+
+        .skills li span {
+            display: block;
+            width: 0;
+            background: #4CAF50;
+            height: 10px;
+            border-radius: 25px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Skill bar fills as you scroll */
+        .skills li:hover span {
+            width: 90%;
+        }
+
+        /* Project Cards */
+        .project {
+            background: #2c2c2c;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-10px) scale(1.05); /* Enhanced hover effect */
+        }
+
+        .project h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .project a {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer h2 {
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        footer ul li a {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* Smooth scrolling and fade animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Social media icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .social-icons a {
+            color: #4CAF50;
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .project {
+                padding: 20px;
+            }
+
+            .skills li {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile">
+            <img src="profile.jpg" alt="Yuri Isaac Laygo">
+        </div>
+        <h1 class="fade-in">Yuri Isaac Laygo</h1>
+        <p class="fade-in">Innovator & Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="fade-in">I am an Information Systems student with a passion for technology and innovation. My academic journey has equipped me with a strong foundation in software development, database management, and systems analysis.</p>
+        <p class="fade-in">With a keen interest in healthcare technology, I have focused my studies on developing solutions that enhance operational efficiency and improve patient care.</p>
+
+        <h3 class="fade-in">Skills</h3>
+        <ul class="skills fade-in">
+            <li>Programming Languages: Python, Java, JavaScript <span></span></li>
+            <li>Web Development: HTML, CSS, PHP <span></span></li>
+            <li>Database Management: MySQL, SQL Server <span></span></li>
+            <li>Frameworks: Bootstrap, React <span></span></li>
+            <li>Version Control: Git <span></span></li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project fade-in">
+            <h3>Pharma POS System</h3>
+            <p>This project involves creating a Point of Sale (POS) system specifically designed for pharmacies. The system includes features such as inventory management, sales tracking, and customer management. <a href="https://github.com/yourusername/pharma-pos-system">GitHub Repo</a></p>
+        </div>
+        <!-- Add more projects -->
+    </section>
+
+    <footer>
+        <h2>Contact</h2>
+        <ul>
+            <li><a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/yourprofile"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://github.com/giblipop"><i class="fab fa-github"></i></a>
+            <a href="https://dribbble.com/yourusername"><i class="fab fa-dribbble"></i></a>
+            <a href="https://behance.net/yourusername"><i class="fab fa-behance"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
